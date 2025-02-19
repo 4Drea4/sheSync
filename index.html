@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She Sync - Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash" onclick="enterApp()">
+        <img src="She Sync/She Sync.png" alt="She Sync Logo" id="splash-logo">
+        <p id="tap-to-enter">Ready to reclaim YOUR time?</p>
+    </div>
+
+    <!-- Main App Container (Hidden Until Tap) -->
+    <div id="app" style="display: none;">
+
+        <!-- Date Header -->
+        <div class="date-header">
+            <button onclick="prevDay()">◀</button>
+            <h2 id="current-date">Today</h2>
+            <button onclick="nextDay()">▶</button>
+        </div>
+
+        <!-- Task List -->
+        <div id="task-container">
+            <div id="task-list"></div>
+        </div>
+
+        <!-- Floating "+" Button -->
+        <button id="add-task-btn">+</button>
+
+        <!-- Task Input Modal -->
+        <div id="task-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Add Task</h3>
+                <input type="text" id="task-name" placeholder="Task Name">
+                <label>Start Time:</label>
+                <input type="time" id="task-start-time">
+                <label>Duration (mins):</label>
+                <input type="number" id="task-duration" placeholder="Enter duration">
+                <div id="task-categories">
+                    <button onclick="setCategory('Work')">Work</button>
+                    <button onclick="setCategory('Exercise')">Exercise</button>
+                    <button onclick="setCategory('Break')">Break</button>
+                    <button onclick="setCategory('Reading')">Reading</button>
+                </div>
+                <button id="save-task">Save Task</button>
+            </div>
+        </div>
+
+        <!-- Wasted Time Section -->
+        <div id="wasted-time-container">
+            <h3>Wasted Time:</h3>
+            <p id="wasted-time">Calculating...</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

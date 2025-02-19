@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Splash Screen */
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#splash-logo {
+    width: 500px;
+    height: auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#tap-to-enter {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ff00bb;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Date Header */
+.date-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.date-header h2 {
+    color: #ff00bb;
+    font-size: 22px;
+}
+
+.date-header button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Task List */
+#task-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 10px;
+}
+
+.task-item {
+    background: white;
+    color: black;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.task-time {
+    font-weight: bold;
+}
+
+.delete-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Floating "+" Button */
+#add-task-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff00bb;
+    color: white;
+    font-size: 24px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#add-task-btn:hover {
+    background-color: #d9009f;
+}
+
+/* Task Input Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Category Buttons */
+#task-categories button {
+    background: #ff00bb;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#task-categories button:hover {
+    background: #d9009f;
+}
+
+/* Wasted Time Display */
+#wasted-time-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#wasted-time {
+    font-size: 16px;
+}
+
+/* Progress Bar */
+#wasted-time-bar {
+    width: 80%;
+    height: 10px;
+    background: white;
+    border-radius: 5px;
+    margin: 10px auto;
+    position: relative;
+}
+
+#wasted-time-fill {
+    height: 100%;
+    width: 0%;
+    background: #ff00bb;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
